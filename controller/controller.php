@@ -26,7 +26,7 @@ class Controller {
 	    include_once 'view/error404.php';
 	}
 
-	    public static function InsertComment($c,$id)
+	    public static function InsertComment($c,$id) {
 	    Comments::InsertComment($c,$id);
 	    //self::NewsByID($id);
 	    header('Location:news?id='.$id.'#ctable');
@@ -39,15 +39,18 @@ class Controller {
 
 	    }
 	    //количество комментариев к новости
-	    public static function CommentsCount($newsid) {
-	    	$arr = Comments::getCommentCount($newsid) {
+	    public static function CommentsCount($newsid)  {
+	    	$arr = Comments::getCommentCountByNewsID($newsid); 
 	    	ViewComments::CommentsCount($arr);
+	  
 	    }
 	    //ссылка - переход к списку комментариев
 	    public static function CommentsCountWithAncor($newsid) {
 	    	$arr = Comments::getCommentCountByNewsID($newsid);
 	    	ViewComments::CommentsCountWithAncor($arr);
 	    }
+	}
+
 
 
 	//end class

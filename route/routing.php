@@ -20,7 +20,7 @@
 		$response = Controller::NewsByID($_GET['id']);
 	}
 
-    elseif ($path == 'insertcomment' and isset($_GET['comment'],$_GET['id']) {
+    elseif ($path == 'insertcomment' and isset($_GET['comment'],$_GET['id'])) {
     	$response = Controller::Insertcomment($_GET['comment'],$_GET['id']);
     }
     else{

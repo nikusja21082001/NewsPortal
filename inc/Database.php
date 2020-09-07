@@ -7,22 +7,22 @@ class database {
 	private $password;
 	private $baseName;
 
-	function_construct() {
+	function __construct() {
 		$this->host = 'localhost';
 		$this->user = 'root';
 		$this->password = '';
 		$this->baseName = 'newsportal';
 		$this->connect();
 	}
-	function_destruct() {
+	function __destruct() {
 		$this->disconnect();
 	}
 
-	function_connect() {
+	function connect() {
 		if (!$this->conn) {
 			try {
-				$this->conn = new PDO('mysql:host='.$this->host.';dbname='.this->baseName.'', $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-			}
+				$this->conn = new PDO('mysql::host='.$this->host.';dbname='.$this->baseName.'', $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+            }
 			catch (Exception $e) {
 				die('Connection failed: ' . $e->getMessage());
 			}
@@ -55,3 +55,4 @@ class database {
 		$response = $this->exec($query);
 		return $response;
 	}
+}
