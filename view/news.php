@@ -25,8 +25,7 @@ class ViewNews{
 		echo '<br><img src="data:image/jpeg;base64,'.base64_encode( $n['picture'] ).'" width=150/><br>';
 		echo "<p>".$n['rext']."</p>";
 	}
-//добавить методы для других видов представлений новостей
 
-}
 
-?>
+} //end class
+

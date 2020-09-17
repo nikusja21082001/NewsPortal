@@ -17,6 +17,11 @@ class Controller {
 		include_once 'view/allnews.php';
 	}
 
+    public static function NewsByCatID() {
+		$arr = News::getAllNews();
+		include_once 'view/catnews.php';
+    }
+
 	public static function NewsByID($id) {
 	    $n = News::getNewsByID($id);
 	    include_once 'view/readnews.php';
@@ -49,8 +54,6 @@ class Controller {
 	    	$arr = Comments::getCommentCountByNewsID($newsid);
 	    	ViewComments::CommentsCountWithAncor($arr);
 	    }
-	}
+	
 
-
-
-	//end class
+} //end class

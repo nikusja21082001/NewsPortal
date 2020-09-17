@@ -1,31 +1,29 @@
 <?php
-class ViewComments {
-
+    class ViewComments {
 	public static function CommentsForm() {
-	echo '<from action="insertcomment">
+	echo '<form action="insertcomment">
 	<input type="hidden" name="id" value="'.$_GET['id'].'">
-	    Teie kommentaar: <input type="text" name="comment">
-	<input type="submit" value="Saada"> </form>';
+	    Teie Kommentaar: <input type="text" name="comment">
+	<input type="submit" value="Saada"> </from>';
 }
-
-public static function CommentsByNews($arr) 
-{
-	if($arr!=null)  {
+    public static function CommentsByNews($arr) {
+       //if($arr!=null) {
 	echo '<table id="ctable"><th>Kommentaar</th><th>Kuupäev</th>';
 	foreach ($arr as $value) {
 		echo '<tr><td>'.$value['text']."</td><td>".$value['date']."</td></tr>";
 	}
 	echo '</table>';
-	}
+	//}
 }
-
 public static function CommentsCountWithAncor($value) {
-	if ($value['count']>0)
+	if ($value['count']>0) { //---------------------{}
 	echo '<b><a href="#ctable"/> ('.$value['count'].') </a></b>';
+    }
 }
-
 public static function CommentsCount($value) {
-	if ($value['count']>0)
+	if ($value['count']>0) {
 		echo '<br><font color="red">('.$value['count'].') </font></b>';
 	    }
-}
+    }
+
+} //end 

@@ -40,6 +40,7 @@ class database {
 		$stmt = $this->conn->prepare($query);
 		$stmt->execute();
 		$stmt->setFetchMode (PDO::FETCH_ASSOC);
+		$response = $stmt->fetch();
 		return $response;
 	}
 

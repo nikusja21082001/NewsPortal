@@ -2,11 +2,12 @@
 class Comments{
 	public static function insertComment($c,$id)
 	{
-		$query = "INSERT INTO `comments` (`id`, `news_id`, `text`, `date`) VALUES (NULL, '".$id."', '".$c."', CURRENT_TIMESTAMP)";
-		$db = new Datebase();
-		$q = $db->executeRun($query);
-		return $q;
+        $query = "INSERT INTO `comments` (`id`, `news_id`, `text`, `date`) VALUES (NULL, '".$id."', '".$c."', CURRENT_TIMESTAMP)";
+        $db = new Datebase();
+        $q = $db->executeRun($query);
+        return $q;
     }
+	
     public static function getCommentByNewsID($id) {
     	$query = "SELECT * FROM comments WHERE news_id=".(string)$id." ORDERE BY id DESC";
     	$db = new Database();
