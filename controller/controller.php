@@ -4,6 +4,7 @@ class Controller {
 
 	public static function StartSite() {
 		$arr = News::getLast10News();
+		//print_r($arr);
 		include_once 'view/start.php';
 	}
 
@@ -17,8 +18,8 @@ class Controller {
 		include_once 'view/allnews.php';
 	}
 
-    public static function NewsByCatID() {
-		$arr = News::getAllNews();
+    public static function NewsByCatID($id) {
+		$arr = News::getNewsByCategoryID($id);
 		include_once 'view/catnews.php';
     }
 

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>web worker</title>
+	<script type="text/javascript">
+		var worker = new worker("task2.js");
+
+		window.addEventListener("load", function () {
+			document.getElementById('btnstart').addEventListener("click",startcmd,true);
+			document.getElementById('btnUnknown').addEventListener("click",unknownCmd,true);
+			document.getElementById('btnStop').addEventListener("click",stopCmd,true);
+			worker.addEventListener("message", messageHadler, true);
+		}, true);
+
+		function startCmd() {
+			worker.postMessage({cmd: 'start', msg: 'hi' });
+		}
+		function unknownCmd() {
+			worker.postMessage({cmd: 'unknown', msg: '???' });
+		}
+		function startCmd() {
+			worker.postMessage({cmd: 'stop', msg: 'bye' });
+		}
+		function startCmd() {
+			document.getElementById("output").innerHTML = e.data;
+		}
+	</script>
+</head>
+<body>
+	<button id="btnstart">
+		команда старт
+	</button>
+	<button id="btnStop">
+		команда неизвестно
+	</button>
+	<button id="btnUnknown">
+		команда стоп
+	</button>
+
+	<div id="output"></div>
+
+</body>
+</html>

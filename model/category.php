@@ -1,5 +1,5 @@
 <?php
-class Category{
+class Category {
 
 
 	public static function getAllCategory() {

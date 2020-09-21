@@ -5,7 +5,7 @@
     $path = explode('/', $host)[$num];
 
 
-    if($path == '' OR $path == 'index' OR $path == 'index.php'){
+    if($path == '' OR $path == 'index' OR $path == 'index.php') {
     	$response = Controller:: StartSite();
     }
 
@@ -19,7 +19,7 @@
 	elseif ($path == 'news' and isset($_GET['id'])) {
 		$response = Controller::NewsByID($_GET['id']);
 	}
-
+    
     elseif ($path == 'insertcomment' and isset($_GET['comment'],$_GET['id'])) {
     	$response = Controller::InsertComment($_GET['comment'],$_GET['id']);
     }
